@@ -2,13 +2,15 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap"
 import { useEffect, useState } from "react"
 import Cards from "./components/Cards"
+import Search from "./components/Search"
 
 const App = () => {
   const [pageNumber, setPageNumber] = useState(1)
   const [fetchedData, setFetchedData] = useState([])
   const { info, results } = fetchedData
+  const [searchCharacter, setSearchCharacter] = useState("")
 
-  const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`
+  const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${searchCharacter}`
 
   useEffect(() => {
     ;(async function () {
@@ -22,6 +24,11 @@ const App = () => {
       <h1 className='text-center my-4 h4 ubuntu'>
         Welcome To Rick & Morty Wiki
       </h1>
+
+      <Search
+        setSearchCharacter={setSearchCharacter}
+        setPageNumber={setPageNumber}
+      />
 
       <div className='container'>
         <div className='row'>
