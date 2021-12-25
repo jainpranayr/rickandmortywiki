@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap"
 import { useEffect, useState } from "react"
 import Cards from "./components/Cards"
+import Paginate from "./components/Paginate"
 import Search from "./components/Search"
 
 const App = () => {
@@ -40,6 +41,12 @@ const App = () => {
           </div>
         </div>
       </div>
+
+      <Paginate
+        info={info}
+        pageNumber={pageNumber}
+        setPageNumber={setPageNumber}
+      />
     </div>
   )
 }
