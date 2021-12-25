@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap"
 import { useEffect, useState } from "react"
+import Cards from "./components/Cards"
 
 const App = () => {
   const [pageNumber, setPageNumber] = useState(1)
@@ -24,8 +25,11 @@ const App = () => {
 
       <div className='container'>
         <div className='row'>
-          <div className='col-3'>
-            <div className='col-8'></div>
+          <div className='col-3'></div>
+          <div className='col-8'>
+            <div className='row'>
+              <Cards results={results} />
+            </div>
           </div>
         </div>
       </div>
