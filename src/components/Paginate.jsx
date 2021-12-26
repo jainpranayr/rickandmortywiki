@@ -1,17 +1,12 @@
 import ReactPaginate from "react-paginate"
 
 const Paginate = ({ info, pageNumber, setPageNumber }) => {
-  const prev = () => {
-    if (pageNumber === 1) return
-    setPageNumber(x => x - 1)
+  const handlePageChange = data => {
+    setPageNumber(data.selected + 1)
   }
-  const next = () => {
-    setPageNumber(x => x + 1)
-  }
-
   return (
     <ReactPaginate
-      containerClassName='pagination justify-content-center'
+      className='pagination justify-content-center'
       previousLabel='Previous'
       nextLabel='Next'
       pageClassName='page-item'
@@ -27,7 +22,7 @@ const Paginate = ({ info, pageNumber, setPageNumber }) => {
       marginPagesDisplayed={2}
       pageRangeDisplayed={5}
       activeClassName='active'
-      onPageChange={data => setPageNumber(data.selected)}
+      onPageChange={handlePageChange}
       forcePage={pageNumber === 1 ? 0 : pageNumber - 1}
     />
   )
