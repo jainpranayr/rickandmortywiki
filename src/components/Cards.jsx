@@ -1,24 +1,30 @@
-const Cards = ({ results }) => {
-  const truncate = (str, truncateLength) => {
-    return str.length <= truncateLength
-      ? str
-      : str.slice(0, truncateLength) + "..."
-  }
+import { Link } from "react-router-dom"
 
-  const badgeBg = st => {
-    return st === "Alive" ? "success" : st === "Dead" ? "danger" : "secondary"
-  }
+const truncate = (str, truncateLength) => {
+  return str.length <= truncateLength
+    ? str
+    : str.slice(0, truncateLength) + "..."
+}
 
+export const badgeBg = st => {
+  return st === "Alive" ? "success" : st === "Dead" ? "danger" : "secondary"
+}
+
+const Cards = ({ results, page }) => {
   return (
     <>
       {results
         ? results.map(({ id, name, image, location, status }) => {
             return (
-              <div className='col-4 mb-3 position-relative' key={id}>
+              <Link
+                to={`${page}${id}`}
+                className='col-4 mb-3 position-relative text-dark text-decoration-none'
+                key={id}
+              >
                 <div className='border border-2 border-primary rounded overflow-hidden'>
                   <img src={image} alt={name} className='img-fluid' />
                   <div className='p-2'>
-                    <div className='fs-5 fw-bold mb-3'>
+                    <div className='fs-5 fw-bold mb-2'>
                       {truncate(name, 14)}
                     </div>
                     <div className='tiny fw-light'>Last location</div>
@@ -30,7 +36,7 @@ const Cards = ({ results }) => {
                 >
                   {status}
                 </div>
-              </div>
+              </Link>
             )
           })
         : "No characters Found :/"}

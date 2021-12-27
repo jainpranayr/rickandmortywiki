@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Episodes from "./Pages/Episodes"
 import Locations from "./Pages/Locations"
 import { useEffect, useState } from "react"
+import CharacterDetails from "./Pages/CharacterDetails"
 
 const App = () => {
   return (
@@ -19,8 +20,11 @@ const App = () => {
 
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/character/:id' element={<CharacterDetails />} />
         <Route path='/episodes' element={<Episodes />} />
+        <Route path='/episodes/:id' element={<CharacterDetails />} />
         <Route path='/locations' element={<Locations />} />
+        <Route path='/locations/:id' element={<CharacterDetails />} />
       </Routes>
     </Router>
   )
@@ -61,7 +65,7 @@ const Home = () => {
           />
           <div className='col-8'>
             <div className='row'>
-              <Cards results={results} />
+              <Cards page='/character/' results={results} />
             </div>
           </div>
         </div>
