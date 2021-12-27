@@ -1,6 +1,6 @@
 const Search = ({ setSearchCharacter, setPageNumber }) => {
   return (
-    <div className='mx-auto w-50 mb-4 shadow-sm'>
+    <div className='mx-auto mb-4 shadow-sm search'>
       <div className='input-group'>
         <input
           type='text'
@@ -21,6 +21,20 @@ const Search = ({ setSearchCharacter, setPageNumber }) => {
           </button>
         </div>
       </div>
+
+      <style>
+        {`
+          .search {
+            width: 50%
+          }
+          
+          @media (max-width: 576px) {
+            .search {
+              width:  80%
+            }
+          }
+          `}
+      </style>
     </div>
   )
 }

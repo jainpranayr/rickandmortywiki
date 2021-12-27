@@ -63,7 +63,7 @@ const Home = () => {
             setGender={setGender}
             setPageNumber={setPageNumber}
           />
-          <div className='col-8'>
+          <div className='col-lg-8 col-12'>
             <div className='row'>
               <Cards page='/character/' results={results} />
             </div>

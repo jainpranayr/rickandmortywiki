@@ -18,10 +18,10 @@ const Cards = ({ results, page }) => {
             return (
               <Link
                 to={`${page}${id}`}
-                className='col-4 mb-3 position-relative text-dark text-decoration-none'
+                className='col-lg-4 col-md-6 col-12 mb-3 position-relative text-dark text-decoration-none'
                 key={id}
               >
-                <div className='border border-2 border-primary rounded overflow-hidden'>
+                <div className='border border-2 border-primary rounded overflow-hidden d-flex justify-content-center flex-column'>
                   <img src={image} alt={name} className='img-fluid' />
                   <div className='p-2'>
                     <div className='fs-5 fw-bold mb-2'>

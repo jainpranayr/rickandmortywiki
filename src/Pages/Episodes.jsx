@@ -35,11 +35,11 @@ const Episodes = () => {
         <p className='text-center'>Air Date : {air_date}</p>
       </div>
       <div className='row'>
-        <div className='col-3'>
-          <p className='text-center mb-4 h5'>Pick Episode</p>
+        <div className='col-lg-3 col-12'>
+          <p className='text-center mb-2 h5'>Pick Episode</p>
           <InputGroup setId={setEpisodeId} total={51} name='Episode' />
         </div>
-        <div className='col-8'>
+        <div className='col-lg-8 col-12'>
           <div className='row'>
             <Cards page='/episodes/' results={results} />
           </div>

@@ -12,7 +12,7 @@ const Filters = ({ setStatus, setGender, setSpecies, setPageNumber }) => {
   }
 
   return (
-    <div className='col-3'>
+    <div className='col-lg-3 col-12 mb-4'>
       <div className='text-center fw-bold fs-4 mb-2'>Filters</div>
       <div
         role='button'
