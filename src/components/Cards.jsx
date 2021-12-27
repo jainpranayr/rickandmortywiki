@@ -18,7 +18,7 @@ const Cards = ({ results }) => {
                 <div className='border border-2 border-primary rounded overflow-hidden'>
                   <img src={image} alt={name} className='img-fluid' />
                   <div className='p-2'>
-                    <div className='fs-4 fw-bold mb-3'>
+                    <div className='fs-5 fw-bold mb-3'>
                       {truncate(name, 14)}
                     </div>
                     <div className='tiny fw-light'>Last location</div>

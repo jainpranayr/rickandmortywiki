@@ -45,7 +45,7 @@ const Home = () => {
   }, [API_URL])
 
   return (
-    <div className='App'>
+    <div>
       <Search
         setSearchCharacter={setSearchCharacter}
         setPageNumber={setPageNumber}
