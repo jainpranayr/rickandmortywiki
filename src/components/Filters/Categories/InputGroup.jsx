@@ -1,14 +1,15 @@
-const InputGroup = ({ total, setEpisodeId }) => {
+const InputGroup = ({ total, name, setId }) => {
   return (
     <div className='input-group mb-3'>
       <select
         className='form-select'
-        onChange={e => setEpisodeId(e.target.value)}
+        onChange={e => setId(e.target.value)}
+        id={name}
       >
         {[...Array(total).keys()].map(x => {
           return (
             <option key={x} value={x + 1}>
-              Episode {x + 1}
+              {name} {x + 1}
             </option>
           )
         })}
